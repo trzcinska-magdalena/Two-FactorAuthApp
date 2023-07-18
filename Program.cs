@@ -1,9 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Two_FactorAuthApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-//builder.Services.AddDbContext<TwoFactorContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddDbContext<TwoFactorContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 //builder.Services.AddScoped<ITwoFactorService, TwoFactorService>();
 
 var app = builder.Build();
