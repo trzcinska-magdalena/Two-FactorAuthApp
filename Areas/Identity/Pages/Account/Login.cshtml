@@ -14,23 +14,16 @@ Author URL: http://w3layouts.com
         <section>
             <h2>Login</h2>
             <div class="social-media mb-4">
-                <a href="#facebook" class="fb"><span class="bi-facebook" aria-hidden="true"></span> Login with facebook</a>
-                <a href="#twitter" class="tw"><span class="bi-twitter" aria-hidden="true"></span> Login with twitter</a>
+                <a class="fb"><span class="bi-facebook" aria-hidden="true"></span> Login with facebook</a>
+                <a class="tw"><span class="bi-twitter" aria-hidden="true"></span> Login with twitter</a>
             </div>
 
-            <form id="account" method="post">
+            <form method="post" asp-route-returnUrl="/">
                 <h2>Login with email</h2>
                 <div asp-validation-summary="All" class="text-danger" role="alert"></div>
 
                 <input class="inputtext" asp-for="Input.Email" type="email" name="Email" placeholder="Email" required="" autofocus>
                 <input class="inputtext" asp-for="Input.Password" type="password" name="Password" placeholder="Password" required="">
-
-                <label class="check-remaind">
-                    <label asp-for="Input.RememberMe" class="form-label">
-                        <input class="form-check-input" asp-for="Input.RememberMe" />
-                        @Html.DisplayNameFor(m => m.Input.RememberMe)
-                    </label>
-                </label>
 
                 <button class="btn btn-style" type="submit">Login</button>
                 <div>
