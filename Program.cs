@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Two_FactorAuthApp.Data;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<TwoFactorContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<TwoFactorContext>();
 //builder.Services.AddScoped<ITwoFactorService, TwoFactorService>();
 
 var app = builder.Build();
