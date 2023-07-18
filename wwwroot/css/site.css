@@ -1,5 +1,6 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    scroll-behavior: smooth;
 }
 
 @media (min-width: 768px) {
@@ -8,15 +9,132 @@ html {
   }
 }
 
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.login-page {
+    width: 100vw;
+    height: 100vh;
+    background: url(../img/banner.jpg) no-repeat center;
+    background-size: cover;
 }
 
-body {
-  margin-bottom: 60px;
+section {
+    background-color: #fff;
+    padding: 30px;
 }
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.social-media a {
+    display: block;
+    text-align: center;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background: #eee;
+    border-radius: 35px;
+}
+
+    .social-media a span {
+        margin-right: 8px;
+    }
+
+    .social-media a.fb {
+        background: #3b5998;
+        color: #fff;
+    }
+
+        .social-media a.fb:hover {
+            background: #314e8a;
+        }
+
+    .social-media a.tw {
+        background: #1da1f2;
+        color: #fff;
+    }
+
+        .social-media a.tw:hover {
+            background: #1091e1;
+        }
+
+
+.inputtext {
+    border: 2px solid #e3e3e3;
+    color: #777;
+    background: #fff;
+    font-size: 16px;
+    line-height: 28px;
+    padding: 10px 14px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 35px;
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid #f1c6aa;
+    box-shadow: none;
+}
+
+.check-remaind {
+    color: #495057;
+}
+
+.check-remaind:hover input {
+    background-color: #fbbb92;
+}
+
+.check-remaind input:checked {
+    background-color: #fbbb92;
+}
+
+.btn-style {
+    font-size: 18px;
+    color: #fff;
+    width: 100%;
+    background: #fbbb92;
+    border: none;
+    padding: 10px 14px;
+    font-weight: 700;
+    border-radius: 35px;
+    transition: .3s ease;
+}
+
+    .btn-style:hover {
+        transform: translateY(-3px);
+    }
+
+p.already,
+p.already a,
+p.forgot,
+p.forgot a,
+p.resend,
+p.resend a {
+    font-size: 16px;
+    line-height: 25px;
+    color: #495057;
+    margin: 5px 0 0;
+    text-align: center;
+}
+
+    p.already a {
+        color: #495057;
+        font-weight: 700;
+    }
