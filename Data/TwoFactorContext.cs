@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Two_FactorAuthApp.Data
 {
-    public class TwoFactorContext : IdentityDbContext
+    public class TwoFactorContext : IdentityDbContext<IdentityUser>
     {
         public TwoFactorContext()
         {
