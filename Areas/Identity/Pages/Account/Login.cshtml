@@ -17,7 +17,7 @@ Author URL: http://w3layouts.com
                 <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
                     @foreach (var provider in Model.ExternalLogins!)
                     {
-                        <button type="submit" class="@provider.Name.ToLower()" name="provider" value="@provider.Name"><span class="bi-twitter" aria-hidden="true"></span> Login with twitter</button>
+                        <button type="submit" class="@provider.Name.ToLower()" name="provider" value="@provider.Name"><span class="bi-@provider.Name.ToLower()" aria-hidden="true"></span> Login with @provider.Name</button>
                     }
                 </form>
             </div>
