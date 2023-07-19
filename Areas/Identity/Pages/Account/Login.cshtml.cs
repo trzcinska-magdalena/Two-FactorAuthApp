@@ -62,15 +62,9 @@ namespace Two_FactorAuthApp.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            Console.WriteLine("POST");
-
             returnUrl ??= Url.Content("~/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-
-            Console.WriteLine(Input.Email + " mmmmmmmmmmmmm");
-            Console.WriteLine(Input.Password + " lllllllllllll");
-            Console.WriteLine(ModelState.IsValid);
 
             if (ModelState.IsValid)
             {
@@ -84,7 +78,7 @@ namespace Two_FactorAuthApp.Areas.Identity.Pages.Account
                 }
                 if (result.RequiresTwoFactor)
                 {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl });
                 }
                 if (result.IsLockedOut)
                 {
