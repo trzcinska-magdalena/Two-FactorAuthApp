@@ -4,9 +4,9 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 body,
@@ -20,7 +20,7 @@ a {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 .login-page {
@@ -41,8 +41,10 @@ h2 {
     margin-bottom: 15px;
 }
 
-.social-media a {
+.social-media button {
     display: block;
+    width: 100%;
+    border: none;
     text-align: center;
     padding: 10px 14px;
     font-size: 16px;
@@ -52,27 +54,27 @@ h2 {
     border-radius: 35px;
 }
 
-    .social-media a span {
+    .social-media button span {
         margin-right: 8px;
     }
 
-    .social-media a.fb {
-        background: #3b5998;
-        color: #fff;
+.social-media .facebook {
+    background: #3b5998;
+    color: #fff;
+}
+
+    .social-media .facebook:hover {
+        background: #314e8a;
     }
 
-        .social-media a.fb:hover {
-            background: #314e8a;
-        }
+.social-media .twitter {
+    background: #1da1f2;
+    color: #fff;
+}
 
-    .social-media a.tw {
-        background: #1da1f2;
-        color: #fff;
+    .social-media .twitter:hover {
+        background: #1091e1;
     }
-
-        .social-media a.tw:hover {
-            background: #1091e1;
-        }
 
 
 .inputtext {
@@ -97,13 +99,13 @@ input:focus {
     color: #495057;
 }
 
-.check-remaind:hover input {
-    background-color: #fbbb92;
-}
+    .check-remaind:hover input {
+        background-color: #fbbb92;
+    }
 
-.check-remaind input:checked {
-    background-color: #fbbb92;
-}
+    .check-remaind input:checked {
+        background-color: #fbbb92;
+    }
 
 .btn-style {
     font-size: 18px;

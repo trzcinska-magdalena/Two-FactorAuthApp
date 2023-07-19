@@ -18,6 +18,13 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
 });
 
+builder.Services.AddAuthentication()
+    .AddTwitter(options =>
+    {
+        options.ConsumerKey = builder.Configuration["Authentication:Twitter:ApiKey"];
+        options.ConsumerSecret = builder.Configuration["Authentication:Twitter:ApiKeySecret"];
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

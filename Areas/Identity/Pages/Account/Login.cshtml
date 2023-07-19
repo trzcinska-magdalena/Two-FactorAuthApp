@@ -14,8 +14,12 @@ Author URL: http://w3layouts.com
         <section>
             <h2>Login</h2>
             <div class="social-media mb-4">
-                <a class="fb"><span class="bi-facebook" aria-hidden="true"></span> Login with facebook</a>
-                <a class="tw"><span class="bi-twitter" aria-hidden="true"></span> Login with twitter</a>
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                    @foreach (var provider in Model.ExternalLogins!)
+                    {
+                        <button type="submit" class="@provider.Name.ToLower()" name="provider" value="@provider.Name"><span class="bi-twitter" aria-hidden="true"></span> Login with twitter</button>
+                    }
+                </form>
             </div>
 
             <form method="post" asp-route-returnUrl="/">
@@ -28,7 +32,7 @@ Author URL: http://w3layouts.com
                 <button class="btn btn-style" type="submit">Login</button>
                 <div>
                     <p class="already">
-                        Don't have an account? 
+                        Don't have an account?
                         <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Sign up</a>
                     </p>
                     <p class="forgot">
